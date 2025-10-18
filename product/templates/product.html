@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>{{ product.title }}</h1>
+    <h1>{{ product.description }}</h1>
+    <h1>{{ product.category }}</h1>
+    <form action="{% url 'add-to-basket' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+        <input type="hidden" name="next" value="{{ request.build_absolute_uri }}">
+        <button type="submit">add to basket</button>
+
+    </form>
+
+{% endblock %}

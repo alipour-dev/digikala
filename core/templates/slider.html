@@ -1,0 +1,20 @@
+{% load static %}
+{% load get_slider_image %}
+<!-- slider-->
+        <section class="swiper" data-swiper-options="{&quot;loop&quot;:true, &quot;spaceBetween&quot;:0, &quot;autoHeight&quot;:true, &quot;autoplay&quot;:{&quot;delay&quot;: 5000}, &quot;speed&quot;:300 }" style="--swiper-theme-color: var(--bs-primary);">
+          <div class="swiper-wrapper">
+          {% sliders as sliders %}
+              {% for slider in sliders %}
+                    <a class="swiper-slide rounded" href="">
+<picture>
+    <source srcset="{{ slider.image.url }}" media="(min-width: 850px)"/>
+    <img class="swiper-slide-img" src="{% static 'img/pages/index/slider/2-sm.jpg' %}" alt="" loading="lazy" decoding="async"/>
+</picture></a>
+
+          <div class="swiper-pagination swiper-pagination-center bg-body rounded rounded-bottom-0 bottom-0"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+              {% endfor %}
+
+
+        </div></section>

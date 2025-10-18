@@ -1,0 +1,16 @@
+/* tailwind ================================ */
+@import "./tailwind";
+
+/* colors ================================= */
+$primary: #1b3cb4; // persian blue
+$secondary: #2d1181; // persian indigo
+
+$success: $emerald-700;
+$info: $cyan-500;
+$warning: #face4c; // Saffron Mango
+$danger: $rose-600;
+$light: $gray-100;
+$dark: $gray-900;
+
+/* Bootstrap =============================== */
+@import "./bootstrap/bootstrap";
