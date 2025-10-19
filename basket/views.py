@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.views.decorators.http import require_POST
@@ -6,7 +7,8 @@ from basket.models import Basket
 from product.models import Product
 
 
-# @require_POST
+@require_POST
+@login_required(login_url='/admin/login')
 def add_to_baske(request):
     # todo-1 : check if user has basket_id in cookie
     # todo-2 : create and assign if doesn't have

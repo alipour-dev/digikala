@@ -7,6 +7,8 @@ from product.models import Product
 class Basket(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,related_name='baskets')
     created_at = models.DateTimeField(auto_now_add=True)
+    def __str__(self):
+        return self.user.username
 
     def add(self, product):
         if self.lines.filter(product=product).exists():
