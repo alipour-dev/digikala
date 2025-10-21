@@ -168,7 +168,7 @@
                       </div>
                         <form method="post" action="{% url 'add-to-basket' %}">
                             {% csrf_token %}
-                            <input type="hidden" name="product_id" value="{{ product.id }}">
+                            {{ form.as_p }}
                             <input type="hidden" name="next" value="{{ request.build_absolute_uri }}">
                       <button class="w-100 btn btn-lg btn-danger py-3" type="submit">
                         <div class="fs-5">افزودن به سبد</div><i class="ti ti-plus fs-2" aria-hidden="true"></i>
