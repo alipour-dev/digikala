@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block main %}
+    {% for shipping_address in shipping_addreses %}
+        <p>address {{ shipping_address.id }}</p>
+        <p>{{ shipping_address.user }}</p>
+        <p>{{ shipping_address.city }}</p>
+        <p>{{ shipping_address.zipcode }}</p>
+        <p>{{ shipping_address.number }}</p>
+        <p>{{ shipping_address.address }}</p>
+        <p>{{ shipping_address.creared_time }}</p>
+        <p>{{ shipping_address.modified_time }}</p>
+         <p>-----------------------------------</p>
+
+    {% endfor %}
+
+
+{% endblock %}
